@@ -1,17 +1,17 @@
 import './App.css'
 import Card from './components/Card'
 import { Todo } from './models/todo'
-import { todos } from './common/todos'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [myTodos, setMyTodos] = useState<Todo[] | null>(todos);
+  const [myTodos, setMyTodos] = useState<Todo[]>([]);
   const [title, setTitle] = useState("");
-  var todosJson = '';
 
-  fetch('https://jsonplaceholder.typicode.com/todos')
-  .then((response) => response.json())
-  .then((json) => todosJson = json);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((response) => response.json())
+    .then((json) => setMyTodos(json));
+  }, [])
 
   const addTodo = () => {
     if(!myTodos)

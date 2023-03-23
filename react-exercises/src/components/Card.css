@@ -4,20 +4,46 @@
     border-radius: 5px;
 }
 
-.status {
+.statusRed {
     display: flex;
     align-items: center;
-    background: rgb(255, 41, 95);
+    cursor: pointer;
+    background-color: rgb(255, 41, 95);
     border-right: solid;
     width: auto;
     padding-left: 16px;
     padding-right: 16px;
-}
-
-.status i {
     color: white;
     font-size: 50px;
     text-shadow: 0 0 3px #000;
+    transition: 0.3s;
+}
+
+.statusRed:hover {
+    background-color: rgb(255, 130, 161);
+}
+
+.statusGreen {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: green;
+    border-right: solid;
+    width: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+    font-size: 50px;
+    text-shadow: 0 0 3px #000;
+    transition: 0.3s;
+}
+
+.statusGreen:hover {
+    background-color: rgb(72, 197, 72);
+}
+
+.status:hover {
+   border: 5px solid; 
 }
 
 .content {
